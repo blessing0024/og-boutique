@@ -1,0 +1,298 @@
+html{
+    font-size: 80%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    margin: 4em;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 4.1rem;
+    margin: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    color: rgb(138, 67, 67);
+    /* font-weight: 550; */
+    font-size: 1.4rem;
+
+}
+
+nav ul li a.active:before{
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 1px;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    bottom: -6px;
+    transition: width .3s;
+}
+
+nav ul li a:before{
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 1px;
+    border-bottom: 2px solid rgb(122, 122, 122);
+    bottom: -6px;
+    transition: width .3s;
+}
+
+nav ul li a:hover:before{
+    width: 80%;
+}
+
+main{
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+}
+
+.left-col{
+    width: 45%;
+}
+
+.right-col{
+    flex-grow: 1;
+}
+
+h1{
+    font-size: 5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+.subhead{
+    font-size: 2rem;
+}
+
+.cta-btns{
+    margin: 5em 0;
+}
+
+.cta-btns,
+.secondary-cta{
+    display: flex;
+    gap: 2em;
+}
+
+.primary-cta{
+    background-color: rgb(193, 124, 124);
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+    border-radius: 1.5em;
+    padding: 1em 1em;
+}
+
+/* .secondary-cta{
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 1em 0;
+} */
+
+
+.secondary-cta{
+    font-size: 1.7rem;
+    text-decoration: none;
+    padding: 1em 0;
+    display: block;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* .secondary-cta:hover{
+    background-color: rgb(193, 124, 124);
+    border-radius: 1.5em;
+} */
+
+.secondary-cta svg{
+    width: 20px;
+    transition: transform .3s;
+}
+
+
+.secondary-cta:hover svg{
+    transform: translateX(10px);
+}
+
+.primary-cta:hover{
+    background: #E2D1ED;
+}
+
+.secondary-cta:hover{
+    text-decoration: underline;
+}
+
+.news{
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    position: relative;
+    border-radius: 2em;
+    border: 1px solid black;
+}
+
+
+.news:before{
+position: absolute;
+content: '';
+background: url('image/confetti.svg');
+width: 100px;
+height: 100px;
+top: -20px;
+left: -20px;
+z-index: 2;
+}
+
+
+.customers{
+    font-size: 5rem;
+    margin: 0;
+    line-height: 100%;
+}
+
+.details{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.right-col{
+    display: grid;
+    gap: 2.em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: "left." "left.";
+}
+
+.card{
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    background-size: 150%;
+    transition: background-size 800ms;
+}
+
+.card:hover{
+    background-size: 170%;
+}
+
+.card:hover .card-details{
+    transform: translateY(-20px);
+}
+
+
+.Product1{
+    grid-area: left;
+    background-image: url('image/clothing1.jpg');
+    position: relative;
+}
+
+.Product1:before{
+    position: absolute;
+    content: '';
+    background: url('image/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 20;
+    left: -30px;
+    pointer-events: none;
+}
+
+.Product2{
+    background-image: url('image/clothing2.jpg');
+}
+
+.Product3{
+    background-image: url('image/clothing3.jpg');
+}
+
+.card-details{
+    background-color: white;
+    border-radius: .7em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 800ms;
+}
+
+.card-details a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.card-details p{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.product-price{
+    font-size: 1.8rem;
+}
+
+
+
+/* Animation section */
+
+
+.overlay{
+    position: absolute;
+    z-index: 999;
+    background: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 1s ease-in forwards;
+    transform-origin: bottom;
+}
+
+
+@keyframes reveal {
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+main{
+    animation: growIn 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+
+@keyframes growIn{
+    to{
+        transform: scale(1);
+    }
+}
